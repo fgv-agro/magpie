@@ -1,26 +1,16 @@
-# MAgPIE - Modular open source framework for modeling global land-systems
+# MagPIE-Brazil - Regionalized framework for modeling land-use systems in Brazil
 
-[![DOI](https://zenodo.org/badge/135430060.svg)](https://zenodo.org/badge/latestdoi/135430060)
-[![R build status](https://github.com/magpiemodel/magpie/workflows/check/badge.svg)](https://github.com/magpiemodel/magpie/actions)
+Based on the original MAgPIE model developed by the Potsdam Institute for Climate Impact Research (PIK).
 
-## WHAT IS MAGPIE?
-The *Model of Agricultural Production and its Impact on the Environment* (MAgPIE)
-is a modular open-source framework for modeling global land-systems, which
-explicitly accounts for both agriculture and forestry. It is coupled to the
-grid-based dynamic vegetation model LPJmL, with a spatial resolution of 0.5°x0.5°.
-MAgPIE takes regional economic conditions such as demand for agricultural commodities
-and timber products, technological development, and production costs into account,
-as well as spatially explicit data on potential crop yields, forest growth,
-and land and water constraints (from LPJmL). Based on these, the model derives
-specific land use patterns, crop yields, timber yields, and total costs of
-agricultural and forestry production for each grid cell. The objective function of
-the land use model is to minimize total cost of production for a given amount of
-regional food, bioenergy, and timber demand. Regional food energy demand is defined
-for an exogenously given population in 10 food energy categories, based on regional
-diets. Future trends in food demand are derived from a cross-country regression analysis,
-based on future scenarios on GDP and population growth.
+## WHAT IS MAGPIE-BRAZIL?
+MagPIE-Brazil is a regionalized version of the MAgPIE (Model of Agricultural Production and its Impact on the Environment) framework, adapted to represent land-use dynamics, agricultural systems, and environmental processes in Brazil.
 
-https://www.pik-potsdam.de/research/projects/activities/land-use-modelling/magpie
+It builds upon the original MAgPIE model developed by the Potsdam Institute for Climate Impact Research (PIK), maintaining its core structure while introducing modifications to better capture Brazilian geographic, biophysical, and economic conditions.
+
+Like the original framework, MagPIE-Brazil combines economic optimization (e.g., demand for agricultural commodities, production costs, and trade) with biophysical constraints (e.g., crop yields, land availability, and water constraints). The model derives land-use patterns and production outcomes under different scenarios, with a focus on applications relevant to Brazil.
+
+This repository is not the official MAgPIE repository.
+Original project: https://github.com/magpiemodel/magpie
 
 ## DOCUMENTATION
 A framework description paper has been published in
@@ -47,6 +37,8 @@ structural characteristics.
 ## COPYRIGHT
 Copyright 2008-2025 Potsdam Institute for Climate Impact Research (PIK)
 
+Modifications and extensions for MagPIE-Brazil: FGV-Agro.
+
 ## LICENSE
 This program is free software: you can redistribute it and/or modify
 it under the terms of the **GNU Affero General Public License** as published by
@@ -63,15 +55,13 @@ Following the principles of good scientific practice it is recommended
 to make the source code available in the events of model based publications
 or model-based consulting.
 
-When using a modified version of **MAgPIE** which is not identical to versions
-in the official main repository at https://github.com/magpiemodel add a suffix
-to the name to allow distinguishing versions (format **MAgPIE-suffix**).
+This repository represents a modified version of MAgPIE.
+To distinguish it from the original model, the suffix **MagPIE-Brazil** is used.
 
 ## HARDWARE REQUIREMENTS
 The model is quite resource heavy and works best on machines with high CPU clock
 and memory. Recommended is a machine with at least 16GB of memory and a Core i7 CPU or similar.
 
-## HOW TO INSTALL
 Commands formatted as `code` should generally be run in a terminal (PowerShell on Windows).
 
 ### List of Requirements
@@ -164,14 +154,10 @@ script "default". Make sure that the config file has been set correctly before
 starting the model.
 
 ## HOW TO CONTRIBUTE
-We are interested in working with you! Just contact us through GitHub
-(https://github.com/magpiemodel) or by mail (magpie@pik-potsdam.de) if you have
-found and/or fixed a bug, developed a new model feature, have ideas for further
-model development, suggestions for improvements or anything else. We are open to
-any kind of contribution. Our aim is to develop an open, transparent and
-meaningful model of the agricultural land use sector to get a better
-understanding of the underlying processes and possible futures. Join us doing
-so!
+We welcome contributions related to the development and application of MagPIE-Brazil.
+
+For contributions to the original MAgPIE framework, please refer to:
+https://github.com/magpiemodel/magpie
 
 ## DEPENDENCIES
 Model dependencies **must be publicly available** and should be Open Source.
@@ -221,25 +207,23 @@ could discuss that issue with the MAgPIE development team
 By default the results of a model run are written to an individual results folder within the "output/" folder of the model. The two most important output files are the fulldata.gdx and the report.mif. The fulldata.gdx is the technical output of the GAMS optimization and contains all quantities that were used during the optimization in unchanged form. The mif-file is a csv file of a specific format and is synthetized from the fulldata.gdx by post-processing scripts. It can be read in any text editor or spreadsheet program and is well suited for a quick look at the results and for further analysis.
 
 ## CONTACT
+For MagPIE-Brazil: 
+(project-mail)
+
+For original MAgPIE:
 magpie@pik-potsdam.de
 
-## KNOWN BUGS
-
-## TROUBLESHOOTING
-Please contact magpie@pik-potsdam.de if you're having troubles installing or running a MAgPIE release version.
-
-### Common issues with installing MAgPIE under Windows
-- To modify the `Path` environment variable, you can use the Windows search by pressing the Windows key, start typing "environment" and select the option "Edit environment variables for your account". Edit the `Path` variable by adding the paths to executables which aren't yet found when testing them in the terminal (via the `New` button). You can also display the currently used path variable in the terminal via `echo %PATH%` (regular terminal) and `$env:PATH`(PowerShell) to check what is already included.
-- Check if `rtools` was installed successfully: Open an `R` session from a terminal, and run `install.packages("pkgbuild")` followed by `pkgbuild::has_rtools()`. This should report `TRUE`.
-- Neither downloading nor running MAgPIE requires administrator privileges, and you'll likely run into issues when trying to run MAgPIE in a folder where `git clone` has been run from an administrator terminal. If you did this by accident, delete the MAgPIE folder and redo the `git clone` from a terminal without administrator privileges.
-- Before running `git clone` in the terminal, make sure that you're in a folder where you have write access and not in a Windows system path. If you're using Windows 11, you can access the terminal by right-clicking and starting a terminal from Windows explorer after navigating to the location where you want to download MAgPIE into.
-- If you're using PowerShell, starting an interactive R session with `R` doesn't work, and you need to type `R.exe` (or `R.bat` if `R.exe` isn't found) instead. The reason behind this is that `r` is a reserved shortcut for repeating the previous command, which is why you'll be getting a cryptic `Invoke-History: Cannot locate most recent history.` error message when trying to start R in a fresh PowerShell session.
-
 ## CITATION
-See file CITATION.cff or the [How-to-Cite section](https://rse.pik-potsdam.de/doc/magpie/4.13.0/#how-to-cite) in the model documentation for information how to cite the model.
+See file CITATION.cff or the documentation.
+
+When using MagPIE-Brazil, clearly indicate that results are based on a modified version of MAgPIE.
 
 ## AUTHORS
 See list of authors in CITATION.cff
 
+(Additional contributors for MagPIE-Brazil)
+
 ## CHANGELOG
-See log on GitHub (https://github.com/magpiemodel)
+See MAgPIE-Brazil log on GitHub (https://github.com/fgv-agro/magpie)
+See original log on GitHub (https://github.com/magpiemodel)
+
