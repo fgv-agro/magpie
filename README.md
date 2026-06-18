@@ -1,13 +1,13 @@
-# MagPIE-Brazil - Regionalized framework for modeling land-use systems in Brazil
+# MAgPIE-NDC/Brazil - Regionalized framework for modeling land-use systems in Brazil
 
 Based on the original MAgPIE model developed by the Potsdam Institute for Climate Impact Research (PIK).
 
-## WHAT IS MAGPIE-BRAZIL?
-MagPIE-Brazil is a regionalized version of the MAgPIE (Model of Agricultural Production and its Impact on the Environment) framework, adapted to represent land-use dynamics, agricultural systems, and environmental processes in Brazil.
+## WHAT IS MAGPIE-NDC/BRAZIL?
+MAgPIE-NDC/Brazil is a regionalized version of the MAgPIE (Model of Agricultural Production and its Impact on the Environment) framework, adapted to represent land-use dynamics, agricultural systems, and environmental processes in Brazil.
 
 It builds upon the original MAgPIE model developed by the Potsdam Institute for Climate Impact Research (PIK), maintaining its core structure while introducing modifications to better capture Brazilian geographic, biophysical, and economic conditions.
 
-Like the original framework, MagPIE-Brazil combines economic optimization (e.g., demand for agricultural commodities, production costs, and trade) with biophysical constraints (e.g., crop yields, land availability, and water constraints). The model derives land-use patterns and production outcomes under different scenarios, with a focus on applications relevant to Brazil.
+Like the original framework, MAgPIE-NDC/Brazil combines economic optimization (e.g., demand for agricultural commodities, production costs, and trade) with biophysical constraints (e.g., crop yields, land availability, and water constraints). The model derives land-use patterns and production outcomes under different scenarios, with a focus on applications relevant to Brazil.
 
 This repository is not the official MAgPIE repository.
 Original project: https://github.com/magpiemodel/magpie
@@ -37,7 +37,7 @@ structural characteristics.
 ## COPYRIGHT
 Copyright 2008-2025 Potsdam Institute for Climate Impact Research (PIK)
 
-Modifications and extensions for MagPIE-Brazil: FGV-Agro.
+Modifications and extensions for MAgPIE-NDC/Brazil: FGV-Agro.
 
 ## LICENSE
 This program is free software: you can redistribute it and/or modify
@@ -56,7 +56,7 @@ to make the source code available in the events of model based publications
 or model-based consulting.
 
 This repository represents a modified version of MAgPIE.
-To distinguish it from the original model, the suffix **MagPIE-Brazil** is used.
+To distinguish it from the original model, the suffix **MAgPIE-NDC/Brazil** is used.
 
 ## HARDWARE REQUIREMENTS
 The model is quite resource heavy and works best on machines with high CPU clock
@@ -154,7 +154,7 @@ script "default". Make sure that the config file has been set correctly before
 starting the model.
 
 ## HOW TO CONTRIBUTE
-We welcome contributions related to the development and application of MagPIE-Brazil.
+We welcome contributions related to the development and application of MAgPIE-NDC/Brazil.
 
 For contributions to the original MAgPIE framework, please refer to:
 https://github.com/magpiemodel/magpie
@@ -207,7 +207,7 @@ could discuss that issue with the MAgPIE development team
 By default the results of a model run are written to an individual results folder within the "output/" folder of the model. The two most important output files are the fulldata.gdx and the report.mif. The fulldata.gdx is the technical output of the GAMS optimization and contains all quantities that were used during the optimization in unchanged form. The mif-file is a csv file of a specific format and is synthetized from the fulldata.gdx by post-processing scripts. It can be read in any text editor or spreadsheet program and is well suited for a quick look at the results and for further analysis.
 
 ## CONTACT
-For MagPIE-Brazil: 
+For MAgPIE-NDC/Brazil: 
 (project-mail)
 
 For original MAgPIE:
@@ -216,14 +216,14 @@ magpie@pik-potsdam.de
 ## CITATION
 See file CITATION.cff or the documentation.
 
-When using MagPIE-Brazil, clearly indicate that results are based on a modified version of MAgPIE.
+When using MAgPIE-NDC/Brazil, clearly indicate that results are based on a modified version of MAgPIE.
 
 ## AUTHORS
 See list of authors in CITATION.cff
 
-(Additional contributors for MagPIE-Brazil)
+(Additional contributors for MAgPIE-NDC/Brazil)
 
 ## CHANGELOG
-See MAgPIE-Brazil log on GitHub (https://github.com/fgv-agro/magpie)
+See MAgPIE-NDC/Brazil log on GitHub (https://github.com/fgv-agro/magpie)
 See original log on GitHub (https://github.com/magpiemodel)
 
